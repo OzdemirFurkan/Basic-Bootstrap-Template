@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odev Tema</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Assets/Content/bootstrap.css">
+    <link rel='stylesheet' href='Assets/Content/rotating-card.css' />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="ust-header">
+        <div class="row">
+            <div class="col-md-6"></div>
+             <div class="col-md-6">
+                 <img src="Assets/Images/instagram_online_social_media-128.png" height="20" width="20"/>
+                 <img src="Assets/Images/facebook_online_social_media-128.png" height="20" width="20"/>
+                 <img src="Assets/Images/google_plus_logo_social_media-128.png" height="20" width="20"/>
+             </div>
+        </div>
+    </div>
+
+    <script src="Assets/Scripts/jquery-1.9.1.js"></script>
+    <script src="Assets/Scripts/bootstrap.js"></script>
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div  class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#"><img id="logo" src="Assets/Images/wissenlogo.png" height="150" width="150" /></a>
+                <a class="navbar-brand" href="#" style="margin: 0; width: 170px;" ></a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Anasayfa</a></li>
+                    <li><a href="#">İletişim</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hakkımızda<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Faaliyet Alanımız</a></li>
+                            <li><a href="#">Takım</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dökümantasyon</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Kaynaklar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group" >
+                        <input id="search" type="text" class="form-control" placeholder="Ara...">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><p class="navbar-text">Hemen üye ol!</p></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Giriş Yap</b> <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Login via
+                                        <div class="social-buttons">
+                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                        </div>
+                                        or
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email Adresi" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Şifre" required>
+                                                <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> keep me logged-in
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        New here ? <a href="#"><b>Join Us</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="Assets/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="Assets/Scripts/jssor.slider-22.2.0.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_options = {
+                $AutoPlay: true,
+                $SlideDuration: 800,
+                $SlideEasing: $Jease$.$OutQuint,
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$
+                },
+                $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$
+                }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        .jssora22l.jssora22lds      (disabled)
+        .jssora22r.jssora22rds      (disabled)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('') center center no-repeat;
+            overflow: hidden;
+        }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+        .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
+        .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
+    </style>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="Assets/Images/wissen-1.jpg" title="Stop Metsamor" alt="Metsamor must stop!"/>
+
+                <!--<div style="position:absolute;top:30px;left:30px;width:480px;height:120px;
+                z-index:0;font-size:50px;color:#ffffff;line-height:60px;"></div>
+                <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;      z-index:0;font-size:30px;color:#ffffff;line-height:38px;">
+                </div>-->
+            </div>
+            <div>
+                <img data-u="image" src="Assets/Images/wissen-2.png" />
+            </div>
+            <div>
+                <img data-u="image" src="Assets/Images/wissen-3.png" />
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <h1 class="titleegitim">
+                Eğitim Programlarımız
+                <br>
+                <small></small>
+            </h1>
+                <div class="col-md-3"> <!--col-sm-6 ekleyerek kucultebiliriz-->
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="front">
+                                <div class="cover">
+                                    <img src="Assets/Images/develop.jpg"/>
+                                </div>
+                                <div class="user">
+                                    <img class="img-circle" src="Assets/Images/java-wissen.png"/>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h3 class="name">Java Standard Edition</h3>
+                                        <p class="profession">84 saat (14 gün)</p>
+                                        <p class="text-center">Bu eğitime bu alanda hiçbir bilgiye sahip olmayan kişiler de, belirli düzeyde bilgi sahibi deneyimli kişiler de katılabilir.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <i class="fa fa-mail-forward"></i> Detaylı Bilgi
+                                    </div>
+                                </div>
+                            </div> <!-- end front panel -->
+                            <div class="back">
+                                <div class="header">
+                                    <h5 class="motto">Temel bilgisayar kullanım becerileri gereklidir.</h5>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h4 class="text-center">Çalışma Alanları</h4>
+                                        <p class="text-center">Java uygulamaları konusunda bağımsız danışman (free-lance).
+                                            Kurumsal firmaların yazılım geliştirme departmanları</p>
+
+                                        <div class="stats-container">
+                                            <div class="stats">
+                                                <h4>235</h4>
+                                                <p>
+                                                    Mezun
+                                                </p>
+                                            </div>
+                                         <div class="stats">
+                                                <h4>114</h4>
+                                                <p>
+                                                    Sertifika
+                                                </p>
+                                            </div>
+
+                                            <div class="stats">
+                                                <h4>35</h4>
+                                                <p>
+                                                    Proje
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <div class="social-links text-center">
+                                        <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </div>
+                                </div>
+                            </div> <!-- end back panel -->
+                        </div> <!-- end card -->
+                    </div> <!-- end card-container -->
+                </div> <!-- end col sm 3 -->
+                <!--         <div class="col-sm-1"></div> -->
+                <div class="col-md-3">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="front">
+                                <div class="cover">
+                                    <img src="Assets/Images/software.jpg"/>
+                                </div>
+                                <div class="user">
+                                    <img class="img-circle" src="Assets/Images/mic.png" />
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h3 class="name">Introduction in C#</h3>
+                                        <p class="profession">36 saat (6 gün)</p>
+                                        <p class="text-center"> Bu eğitimde; katılımcıların Microsoft teknolojilerini tanıyan, kullanan ve geliştiren kişiler haline gelmeleri amaçlanmaktadır.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <i class="fa fa-mail-forward"></i> Detaylı Bilgi
+                                    </div>
+                                </div>
+                            </div> <!-- end front panel -->
+                            <div class="back">
+                                <div class="header">
+                                    <h5 class="motto">Herhangi bir programlama dilinde, temel seviyede bilgi sahibi olunmalıdır.</h5>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h4 class="text-center">Çalışma Alanları</h4>
+                                        <p class="text-center">Firmaların bilgi işlem departmanları.Microsoft, Cisco, HP, IBM gibi uluslararası üreticilerde veya iş ortakları</p>
+
+                                        <div class="stats-container">
+                                            <div class="stats">
+                                                <h4>335</h4>
+                                                <p>
+                                                    Mezun
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>214</h4>
+                                                <p>
+                                                    Sertifika
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>80</h4>
+                                                <p>
+                                                    Proje
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <div class="social-links text-center">
+                                        <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </div>
+                                </div>
+                            </div> <!-- end back panel -->
+                        </div> <!-- end card -->
+                    </div> <!-- end card-container -->
+                </div> <!-- end col sm 3 -->
+                <!--         <div class="col-sm-1"></div> -->
+                <div class="col-md-3">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="front">
+                                <div class="cover">
+                                    <img src="Assets/Images/data.jpg"/>
+                                </div>
+                                <div class="user">
+                                    <img class="img-circle" src="Assets/Images/cisco.png"/>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h3 class="name">CCNA Security</h3>
+                                        <p class="profession">48 saat (8 gün)</p>
+
+                                        <p class="text-center">Katılımcılar  Router ve Switch güvenliği, Firewall servisleri, Remote Access konularında deneyim sahibi olacaklardır.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="rating">
+                                            <i class="fa fa-mail-forward"></i> Detaylı Bilgi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end front panel -->
+                            <div class="back">
+                                <div class="header">
+                                    <h5 class="motto">CCNA Routing and Switching eğitimine katılmış veya bu eğitime eşdeğer bilgiye sahip olmak.</h5>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h4 class="text-center">Çalışma Alanları</h4>
+                                        <p class="text-center">Servis Sağlayıcılar,Gsm Operatörleri,Hosting Firmaları,Network Firmaları,Bankalar</p>
+
+                                        <div class="stats-container">
+                                            <div class="stats">
+                                                <h4>534</h4>
+                                                <p>
+                                                    Mezun
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>314</h4>
+                                                <p>
+                                                    Sertifika
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>204</h4>
+                                                <p>
+                                                    Proje
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <div class="social-links text-center">
+                                        <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </div>
+                                </div>
+                            </div> <!-- end back panel -->
+                        </div> <!-- end card -->
+                    </div> <!-- end card-container -->
+                </div> <!-- end col-sm-3 -->
+
+                <div class="col-md-3">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="front">
+                                <div class="cover">
+                                    <img src="Assets/Images/ios.png"/>
+                                </div>
+                                <div class="user">
+                                    <img class="img-circle" src="Assets/Images/apple.jpg"/>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h3 class="name">IOS with Swift</h3>
+                                        <p class="profession">102 saat (17 gün)</p>
+
+                                        <p class="text-center">Katılımcılar,Apple laboratuvarlarımızda iPhone ve iPad uygulamalarının nasıl geliştirilip öğrenirler.</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="rating">
+                                            <i class="fa fa-mail-forward"></i> Detaylı Bilgi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end front panel -->
+                            <div class="back">
+                                <div class="header">
+                                    <h5 class="motto">Herhangi bir programlama dilinde, temel seviyede bilgi sahibi olunmalıdır.</h5>
+                                </div>
+                                <div class="content">
+                                    <div class="main">
+                                        <h4 class="text-center">Çalışma Alanları</h4>
+                                        <p class="text-center">Firmaların mobile uygulama geliştme departmanlarında,Sektör bağımsız olarak tüm orta ve büyük işletmelerde.</p>
+
+                                        <div class="stats-container">
+                                            <div class="stats">
+                                                <h4>235</h4>
+                                                <p>
+                                                    Mezun
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>114</h4>
+                                                <p>
+                                                    Sertifika
+                                                </p>
+                                            </div>
+                                            <div class="stats">
+                                                <h4>35</h4>
+                                                <p>
+                                                    Proje
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <div class="social-links text-center">
+                                        <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                        <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                    </div>
+                                </div>
+                            </div> <!-- end back panel -->
+                        </div> <!-- end card -->
+                    </div> <!-- end card-container -->
+                </div> <!-- end col-sm-3 -->
+        </div> <!-- end row -->
+    </div>
+
+
+        <script type="text/javascript">
+            $().ready(function(){
+                $('[rel="tooltip"]').tooltip();
+
+            });
+
+            function rotateCard(btn){
+                var $card = $(btn).closest('.card-container');
+                console.log($card);
+                if($card.hasClass('hover')){
+                    $card.removeClass('hover');
+                } else {
+                    $card.addClass('hover');
+                }
+            }
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-46172202-4', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+
+    <footer class="nb-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="about">
+                        <img src="images/logo.png" class="img-responsive center-block" alt="">
+                        <p>Kariyerinizi şekillendirmeye hazır mısınız?</p>
+
+                        <div class="social-media">
+                            <ul class="list-inline">
+                                <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <h2 class="title">Etkinlikler</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i>Unity Workshop - İstanbul Üniversitesi</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i>Scrum Workshop - Yıldız Teknin Üniversitesi</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i>Android Workshop - Bahçeşehir Üniversitesi</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <h2 class="title">Haberler</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Türkiye’de Nitelikli Sistem ve Ağ Uzmanı İhtiyacı Artıyor</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Profesyonel .NET Eğitimleri Wissen’de</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Wissen Uluslararası Partnerliklerle Büyüyor</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Sınır Tanımayan Mobil Yazılım Eğitimleri</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Oyun yazılımı sektörü Türkiye’yi geleceğe taşıyacak</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <h2 class="title">KATALOG</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Bahçeşehir Üniversitesi | Türkçe Katalog</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Wissen Akademie Basın Bülteni | 2016</a></li>
+                            <li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Bahcesehir University | English Catalogue</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info-single">
+                        <h2 class="title">Konum</h2>
+                        <p>Barbaros Bulvarı Yıldız İş Hanı No :9 Kat :3 34353 Beşiktaş - İstanbul</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Copyright © 2014 - Bahçeşehir Üniversitesi - Wissen</p>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
